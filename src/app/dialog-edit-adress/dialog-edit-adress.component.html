@@ -1,0 +1,34 @@
+
+<!-- Width anpassen -->
+<div class="progressbar-container">
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+</div>
+<h2 mat-dialog-title>Edit Address </h2>
+<mat-dialog-content>
+   
+
+   <div>
+    <mat-form-field class="mr-16 full-width" appearance="outline">
+        <mat-label>Street + House No.</mat-label>
+        <input [disabled]="loading" [(ngModel)]="user.street" matInput placeholder="Address">
+        <!-- <mat-hint>Please enter a name</mat-hint> -->
+    </mat-form-field>
+   </div>
+   <div>
+    <mat-form-field class="mr-16" appearance="outline">
+        <mat-label>Zip code</mat-label>
+        <input [disabled]="loading" [(ngModel)]="user.zipCode" matInput placeholder="Address">
+        <!-- <mat-hint>Please enter a name</mat-hint> -->
+    </mat-form-field>
+ 
+    <mat-form-field class="mr-16" appearance="outline">
+        <mat-label>City</mat-label>
+        <input [disabled]="loading" [(ngModel)]="user.city" matInput placeholder="Address">
+        <!-- <mat-hint>Please enter a name</mat-hint> -->
+    </mat-form-field>
+   </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button (click)=" this.dialogRef.close(); ">Cancle</button>
+    <button (click)="saveUser()" mat-button>Save</button>
+</mat-dialog-actions>
