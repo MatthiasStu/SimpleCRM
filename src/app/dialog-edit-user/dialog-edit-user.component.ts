@@ -55,7 +55,6 @@ export class DialogEditUserComponent {
     const userDocRef = doc(this.firestore, "users", this.userId);
     updateDoc(userDocRef, sanitizedUserObj)
       .then(() => {
-        console.log("User updated successfully");
         this.loading = false; 
       });
   }
